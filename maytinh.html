@@ -1,0 +1,59 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Bài toán máy tính</title>
+</head>
+
+<body>
+<div class ="box">
+    <div class ="display"> <input type="text"  id="d"  /></div>
+<div class ="key"></div>
+    <input type="button" class="button black" value ='1'onclick = "v('1')"/>
+    <input type="button" class="button black" value="2" onclick = "v('2')"/>
+    <input type="button" class="button black" value="3" onclick = "v('3')"/>
+    <input type="submit" class="button pink" value="+" onclick = "v('+')"/>
+    <br>
+    <input type="button" class="button black" value="4" onclick = "v('4')"/>
+    <input type="button" class="button black" value="5" onclick = "v('5')"/>
+    <input type="button" class="button black" value="6" onclick = "v('6')"/>
+    <input type="button" class="button pink" value="-" onclick = "v('-')"/>
+    <br>
+    <input type="button" class="button black" value="7" onclick = "v('7')"/>
+    <input type="button" class="button black" value="8" onclick = "v('8')"/>
+    <input type="button" class="button black" value="9" onclick = "v('9')"/>
+    <input type="button" class="button pink" value="x" onclick = "v('x')"/>
+    <br>
+    <input type="button" class="button black" value="C" onclick="c('')"/>
+    <input type="button" class="button black" value="0" onclick = "v('0')"/>
+    <input type="button" class="button orange" value="=" onclick = 'e()'/>
+    <input type="button" class="button pink" value="/" onclick = "v('/')"/>
+</div>
+</div>
+<script>
+    //c(val) để xóa dữ liệu màn hình
+    function c(val)
+    {
+        document.getElementById("d").value=val;
+    }
+    //v(val) gỗ số cùng với toán học
+    function v(val)
+    {
+        document.getElementById("d").value+=val;
+    }
+    //e() dánh giá hay nút =
+    function e()
+    {
+        try
+        {
+            c(eval(document.getElementById("d").value))
+        }
+        catch(e)
+        {
+            c('Error')
+        }
+    }
+
+</script>
+</body>
+</html>
